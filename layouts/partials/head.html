@@ -1,6 +1,9 @@
 <header>
 	<div class="main">
 		<a href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+		{{ if .Params.og_image }}
+		<meta property="og:image" content={{ .Params.og_image | absURL }}/>
+		{{ end }}
 	</div>
 	<nav>
 		{{ range .Site.Menus.main }}
